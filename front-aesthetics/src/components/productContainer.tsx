@@ -19,12 +19,12 @@ const ProductContainer = ({ product }: IProductContainerProps) => {
     }
 
     return (
-        <div className="w-4/5 h-3/4 min-w-[1502px] min-h-[803] bg-pink-800 rounded-lg flex flex-row pb-8 pt-20">
-            <div className="flex flex-col justify-center w-2/4 pl-32">
-                <p className="text-5xl text-gray-100 pb-6 ml-12">{product.name}</p>
-                <div className=" w-[30rem] h-[33rem] ml-12">
+        <div className="w-4/5 min-h-[803] gap-4 md:gap-0 flex-wrap md:flex-nowrap bg-pink-800 rounded-lg flex flex-col md:flex-row pb-8 pt-20 justify-center px-4">
+            <div className="flex flex-col flex-wrap justify-center ml-0 lg:ml-16">
+                <p className="text-4xl md:text-5xl text-gray-100 pb-6 md:ml-12">{product.name}</p>
+                <div className=" md:w-[30rem] md:h-[33rem] lg:ml-12 w-full h-[186px] justify-center flex">
                     <Image
-                        className="object-cover w-full h-full  rounded-lg mt-3"
+                        className="object-cover md:w-4/5 md:h-4/5 lg:w-full h-full rounded-lg md:mt-3"
                         src={product.cover_image ? product.cover_image : imagemcapa}
                         width={209}
                         height={186}
@@ -32,23 +32,13 @@ const ProductContainer = ({ product }: IProductContainerProps) => {
                     />
                 </div>
             </div>
-            <div className="flex flex-col gap-12 w-2/4 justify-center ">
-                <p className="text-5xl my-2 text-gray-100">
+            <div className="flex flex-col md:gap-12 w-4/5 justify-center lg:ps-7 ">
+                <p className="text-4xl md:text-5xl my-2 text-gray-100">
                     <strong>Descrição:</strong> {product.description}
                 </p>
-                <p className="text-5xl my-2 text-gray-100">
+                <p className="text-4xl md:text-5xl my-2 text-gray-100">
                     <strong>Preço:</strong> R$ {product.price}
                 </p>
-                <button
-                    type="button"
-                    onClick={handleDelete}
-                    className="bg-red-500 text-white px-4 py-2 rounded-md cursor-pointer"
-                >
-                    Deletar Produto
-                </button>
-                {/* <Link href={"/updateProduct"}>
-                    Atualizar Produto
-                </Link> */}
             </div>
         </div>
     );
